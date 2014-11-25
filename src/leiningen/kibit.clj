@@ -7,7 +7,8 @@
         paths (seq (disj (set (concat
                                 (:source-paths project)
                                 [(:source-path project)]
-                                (mapcat :source-paths (get-in project [:cljsbuild :builds]))))
+                                (mapcat :source-paths (get-in project [:cljsbuild :builds]))
+                                (mapcat :source-paths (get-in project [:cljx :builds]))))
                          nil))
         src `(kibit.driver/external-run '~paths ~@args)
         req '(require 'kibit.driver)]
