@@ -3,7 +3,7 @@
 
 (defn ^:no-project-needed kibit
   [project & args]
-  (let [kibit-project '{:dependencies [[jonase/kibit "0.1.1"]]}
+  (let [kibit-project '{:dependencies [[jonase/kibit "0.1.2"]]}
         paths (seq (disj (set (concat
                                 (:source-paths project)
                                 [(:source-path project)]
