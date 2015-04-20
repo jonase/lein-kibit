@@ -1,4 +1,4 @@
-(defproject lein-kibit "0.1.1"
+(defproject lein-kibit "0.1.2-SNAPSHOT"
   :description "kibit lein plugin"
   :url "https://github.com/jonase/lein-kibit"
   :license {:name "Eclipse Public License"
