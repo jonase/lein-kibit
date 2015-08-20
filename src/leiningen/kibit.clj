@@ -9,10 +9,11 @@
   (let [src-paths (get-in project [:kibit :source-paths] ["rules"])
         kibit-project `{:dependencies [[jonase/kibit "0.1.2"]]
                         :source-paths ~src-paths}
-        paths (seq (disj (set (concat (:source-paths project)
-                                      [(:source-path project)]
-                                      (mapcat :source-paths (get-in project [:cljsbuild :builds]))
-                                      (mapcat :source-paths (get-in project [:cljx :builds]))))
+        paths (seq (disj (set (concat
+                               (:source-paths project)
+                               [(:source-path project)]
+                               (mapcat :source-paths (get-in project [:cljsbuild :builds]))
+                               (mapcat :source-paths (get-in project [:cljx :builds]))))
                          nil))
         rules (get-in project [:kibit :rules])
         src `(kibit.driver/external-run '~paths
