@@ -15,9 +15,11 @@
                               (mapcat :source-paths (get-in project [:cljsbuild :builds]))
                               (mapcat :source-paths (get-in project [:cljx :builds]))))
         rules (get-in project [:kibit :rules])
+        excludes (get-in project [:kibit :excludes])
         src `(kibit.driver/external-run '~paths
                                         (when ~rules
                                           (apply concat (vals ~rules)))
+                                        '~excludes
                                         ~@args)
         ns-xs (mapcat identity (map #(find-namespaces [(File. %)]) src-paths))
         req `(do (require 'kibit.driver)
