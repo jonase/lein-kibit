@@ -1,11 +1,8 @@
 # lein-kibit
 
-See [kibit](https://github.com/jonase/kibit) for instructions on how
-to install and use this plugin.
+## DEPRECATED
 
-## Development
-
-When updating to a new Kibit version, make sure to update both the `project.clj`, and the jonase/kibit dependency in `src/leiningen/kibit.clj`.
+The lein-kibit plugin has been migrated to the [kibit](https://github.com/jonase/kibit) repository, no further development will occur on this repository.
 
 ## License
 
